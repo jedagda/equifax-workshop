@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-function setBackground() {
-	backgroundImage=$1
-	gsettings set org.gnome.desktop.background picture-uri $backgroundImage
-}
 
 function aptInstall() {
 	binary=("$@")
@@ -12,7 +8,7 @@ function aptInstall() {
 		if [ "$?" -ne 0 ] 
 		then
 			echo ""$i" not installed"
-			apt-get install -y "$i"
+			sudo apt-get install -y "$i"
 		else
 			echo ""$i" is already installed"
 		fi
@@ -22,9 +18,9 @@ function aptInstall() {
 declare -a primary_binary=( "ubuntu-desktop" "bash-completion" "apt-transport-https" "ca-certificates" "curl" "gnupg-agent" "software-properties-common" "linux-headers-generic" "linux-headers-5.3.0-29-generic")
 
 
-declare -a secondary_binary=( "git" "docker-ce" "docker-ce-cli" "containerd.io" "vim" "wireshark" "zmap" )
+declare -a secondary_binary=( "git" "docker-ce" "docker-ce-cli" "containerd.io" "vim" "zmap" )
 
-apt-get update
+sudo apt-get update
 aptInstall "${primary_binary[$@]}"
 
 
@@ -69,9 +65,7 @@ fi
 
 
 echo "Downloading and installing Visual Studio code"
-snap install --classic code
-
-setBackground "./mr.robot.jpg"
+sudo snap install --classic code
 
 
 

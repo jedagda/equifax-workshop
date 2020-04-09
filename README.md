@@ -10,23 +10,19 @@
     - git clone https://github.com/jedagda/equifax-workshop.git
  
  2. Once you have cloned the repo and once inside the directory with the vagrantfile run: <br/>
+
     - `vagrant up`
 
- 3. Let the script finish and the open virtualbox and you will see your newly created vm running.  <br/>
+ 3. Let the script finish and once it has stopped on virtualbox right click on the vm and click on reset. <br/>
 
- 2. To log into the virtual machine using the following credentials: <br/>
+ 4. Once it has stated up again log into the virtual machine using the following credentials: <br/>
+
     - `username: vagrant`
     - `password: vagrant`
 
-3. Once logged-in, run the provisioning script: <br/>\
+ 5. Once logged-in, open a teminal and run the configuration script: <br/>\
+
     - `cd setup`
-    - `sudo ./wrkshp-dev-env.sh`
-
-4. Once the script has finished run execute the following command: <br/>
-
-    - `sudo shutdown now -r`
-
-5. Start your vm as you normally would and use the same credentials to login
-
+    - `./config.sh`
 
 
