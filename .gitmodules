@@ -1,0 +1,3 @@
+[submodule "equihax-docker"]
+	path = equihax-docker
+	url = https://github.com/jedagda/equihax-docker
